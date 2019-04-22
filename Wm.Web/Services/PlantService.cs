@@ -16,7 +16,7 @@ namespace Wm.Web.Services
 
         public IList<Plant> GetPlants()
         {
-            return PlantRepository.Plants;
+            return PlantRepository.Plants.Values.ToList();
         }
 
         public void StartWatering(IList<Guid> ids)
@@ -27,6 +27,13 @@ namespace Wm.Web.Services
         public void StopWatering(IList<Guid> ids)
         {
             // overwrite lastWatered to datetime.now need boolean isWatering
+            foreach(var id in ids)
+            {
+                if (PlantRepository.Plants.TryGetValue(id, out var plant))
+                {
+
+                }
+            }
         }
     }
 }

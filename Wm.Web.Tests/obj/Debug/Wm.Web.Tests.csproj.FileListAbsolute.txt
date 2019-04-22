@@ -1,8 +1,7 @@
-C:\Aconyx\TapMango\WaterMango\Wm.Web.Tests\obj\Debug\Wm.Web.Tests.csprojAssemblyReference.cache
-C:\Aconyx\TapMango\WaterMango\Wm.Web.Tests\obj\Debug\Wm.Web.Tests.csproj.CoreCompileInputs.cache
 C:\Aconyx\TapMango\WaterMango\Wm.Web.Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
 C:\Aconyx\TapMango\WaterMango\Wm.Web.Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
 C:\Aconyx\TapMango\WaterMango\Wm.Web.Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+C:\Aconyx\TapMango\WaterMango\Wm.Web.Tests\bin\Debug\Wm.Web.Tests.dll.config
 C:\Aconyx\TapMango\WaterMango\Wm.Web.Tests\bin\Debug\Wm.Web.Tests.dll
 C:\Aconyx\TapMango\WaterMango\Wm.Web.Tests\bin\Debug\Wm.Web.Tests.pdb
 C:\Aconyx\TapMango\WaterMango\Wm.Web.Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
@@ -19,6 +18,8 @@ C:\Aconyx\TapMango\WaterMango\Wm.Web.Tests\bin\Debug\Microsoft.VisualStudio.Test
 C:\Aconyx\TapMango\WaterMango\Wm.Web.Tests\bin\Debug\System.Web.Http.xml
 C:\Aconyx\TapMango\WaterMango\Wm.Web.Tests\bin\Debug\System.Web.Http.WebHost.xml
 C:\Aconyx\TapMango\WaterMango\Wm.Web.Tests\bin\Debug\System.Net.Http.Formatting.xml
+C:\Aconyx\TapMango\WaterMango\Wm.Web.Tests\obj\Debug\Wm.Web.Tests.csprojAssemblyReference.cache
+C:\Aconyx\TapMango\WaterMango\Wm.Web.Tests\obj\Debug\Wm.Web.Tests.csproj.CoreCompileInputs.cache
 C:\Aconyx\TapMango\WaterMango\Wm.Web.Tests\obj\Debug\Wm.Web.Tests.csproj.CopyComplete
 C:\Aconyx\TapMango\WaterMango\Wm.Web.Tests\obj\Debug\Wm.Web.Tests.dll
 C:\Aconyx\TapMango\WaterMango\Wm.Web.Tests\obj\Debug\Wm.Web.Tests.pdb

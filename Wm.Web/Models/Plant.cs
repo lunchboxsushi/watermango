@@ -9,7 +9,7 @@ namespace Wm.Web.Models
     {
         public Guid Id { get; set; } = Guid.NewGuid();
 
-        public DateTime LastWatered { get; set; }
+        public DateTime? LastWatered { get; set; }
 
         public bool IsWatering { get; set; }
 

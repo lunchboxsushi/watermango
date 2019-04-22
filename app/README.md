@@ -1,15 +1,21 @@
 # app
 WaterMango is a run-time service application that does not persist data (no database).
-It is primarly used water plants remotely based on specific criteria
+It is primarly used to water plants remotely based on specific criteria
+
+make sure to update host.etc and binding in IIS to use the correct endpoints. The main
+glue is fixing the devServer proxy for vlue-cli-service
+
+## pre-requisits
+(Node.js with NPM)[https://nodejs.org/en/download/]
 
 ## Project setup
 ```
-npm install
+in the current directory run `npm install` in the command line
 ```
 
 ### Compiles and hot-reloads for development
 ```
-npm run serve
+npm run serve with correct ports
 ```
 
 ### Compiles and minifies for production
@@ -26,6 +32,3 @@ npm run test
 ```
 npm run lint
 ```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).

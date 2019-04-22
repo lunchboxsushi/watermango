@@ -1,5 +1,3 @@
-C:\Aconyx\TapMango\WaterMango\Wm.Web\obj\Debug\Wm.Web.csprojAssemblyReference.cache
-C:\Aconyx\TapMango\WaterMango\Wm.Web\obj\Debug\Wm.Web.csproj.CoreCompileInputs.cache
 C:\Aconyx\TapMango\WaterMango\Wm.Web\bin\Wm.Web.dll.config
 C:\Aconyx\TapMango\WaterMango\Wm.Web\bin\Wm.Web.dll
 C:\Aconyx\TapMango\WaterMango\Wm.Web\bin\Wm.Web.pdb
@@ -54,13 +52,14 @@ C:\Aconyx\TapMango\WaterMango\Wm.Web\bin\roslyn\VBCSCompiler.exe.config
 C:\Aconyx\TapMango\WaterMango\Wm.Web\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
 C:\Aconyx\TapMango\WaterMango\Wm.Web\bin\Newtonsoft.Json.dll
 C:\Aconyx\TapMango\WaterMango\Wm.Web\bin\System.Net.Http.Formatting.dll
-C:\Aconyx\TapMango\WaterMango\Wm.Web\bin\System.Web.Http.dll
 C:\Aconyx\TapMango\WaterMango\Wm.Web\bin\System.Web.Http.WebHost.dll
-C:\Aconyx\TapMango\WaterMango\Wm.Web\bin\Newtonsoft.Json.xml
 C:\Aconyx\TapMango\WaterMango\Wm.Web\bin\System.Net.Http.Formatting.xml
 C:\Aconyx\TapMango\WaterMango\Wm.Web\bin\System.Web.Http.xml
+C:\Aconyx\TapMango\WaterMango\Wm.Web\bin\Newtonsoft.Json.xml
 C:\Aconyx\TapMango\WaterMango\Wm.Web\bin\System.Web.Http.WebHost.xml
 C:\Aconyx\TapMango\WaterMango\Wm.Web\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Aconyx\TapMango\WaterMango\Wm.Web\obj\Debug\Wm.Web.csproj.CoreCompileInputs.cache
 C:\Aconyx\TapMango\WaterMango\Wm.Web\obj\Debug\Wm.Web.csproj.CopyComplete
 C:\Aconyx\TapMango\WaterMango\Wm.Web\obj\Debug\Wm.Web.dll
 C:\Aconyx\TapMango\WaterMango\Wm.Web\obj\Debug\Wm.Web.pdb
+C:\Aconyx\TapMango\WaterMango\Wm.Web\obj\Debug\Wm.Web.csprojAssemblyReference.cache

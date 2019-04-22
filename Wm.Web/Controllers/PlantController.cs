@@ -1,15 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
 using System.Web.Http;
-using Wm.Web.DataStore;
 using Wm.Web.Models;
 using Wm.Web.Services;
 
 namespace Wm.Web.Controllers
 {
+    // Fix later once we need this ready for release
     public class PlantController : ApiController
     {
         private readonly PlantService plantService = new PlantService();

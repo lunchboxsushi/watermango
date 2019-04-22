@@ -14,7 +14,7 @@ namespace Wm.Web.DataStore
     */
     public static class PlantRepository
     {
-        public static IList<Plant> Plants { get; } = new List<Plant>();
+        public static IDictionary<Guid, Plant> Plants { get; } = new Dictionary<Guid, Plant>();
 
         public static bool isInitialized { get; set; }
 
@@ -25,8 +25,10 @@ namespace Wm.Web.DataStore
             if (!isInitialized && !String.IsNullOrEmpty(appConfigFlower))
             {
                 var flowerCount = int.Parse(appConfigFlower);
-                for (var i = 0; i < flowerCount; i++) { 
-                    Plants.Add(new Plant());
+                for (var i = 0; i < flowerCount; i++)
+                {
+                    var plant = new Plant();
+                    Plants.Add(plant.Id, plant);
                 }
             }
 
