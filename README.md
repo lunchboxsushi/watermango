@@ -5,15 +5,15 @@ demo for tapmango
 
 start: clone down project
 
-### Environment Setup
+### IIS Setup
 * IIS setup: make sure you have enabled **Internet Information Services**
-  * Specifically World Wide Web Services > **all** Application Development Features
+* Specifically World Wide Web Services > **all** Application Development Features
   
-* Setup hosts file
+#### Setup hosts file
 navigate to `C:\Windows\System32\drivers\etc` and in hosts file add the following line
 to the bottom of the page `127.0.0.1 dev.watermango.com`
 
-* Setup web api server
+#### Setup web api server
 1. open IIS Manager
 2. on the left bar expand your computer name
 3. right click on sites -> add website 
