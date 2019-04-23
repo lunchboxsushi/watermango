@@ -23,7 +23,7 @@ to the bottom of the page `127.0.0.1 dev.watermango.com`
 
 ### Project build
 1. open sln with visual studio 2017 (.NET Framework 4.6.1)
-2. build projecct (might need to restore nuget packages)
+2. build project (might need to restore nuget packages)
 3. open app folder (need node.js and npm)
 4. run `npm run serve` from the command line it will run the dev server for dev.watermango.com:8080
 
