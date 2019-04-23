@@ -19,19 +19,39 @@ namespace Wm.Web.Services
             return PlantRepository.Plants.Values.ToList();
         }
 
-        public void StartWatering(IList<Guid> ids)
+        public void StartWatering(IList<Plant> entities)
         {
-            // set lastWatered to datetime.now + 10 seconds
+            // set lastWatered the calculated time
+            foreach (var entity in entities)
+            {
+                // incase it's been deleted check our repo
+                if (PlantRepository.Plants.TryGetValue(entity.Id, out var plant))
+                {
+                    // validate plant is able to be watered need to handle business exception case
+                    if (plant.LastWatered == null || plant.LastWatered > DateTime.UtcNow.AddSeconds(30))
+                    {
+                        plant.IsWatering = true;
+                        plant.LastWatered = DateTime.UtcNow.AddSeconds(10);
+                        plant.AlertWatering = plant.LastWatered.GetValueOrDefault().AddHours(6);
+                    } else
+                    {
+                        throw new Exception($"Plant cannot be watered again within 30 seconds");
+                    }
+                }
+            }
         }
 
-        public void StopWatering(IList<Guid> ids)
+        public void StopWatering(IList<Plant> entities)
         {
-            // overwrite lastWatered to datetime.now need boolean isWatering
-            foreach(var id in ids)
+            // set lastWatered the calculated time
+            foreach (var entity in entities)
             {
-                if (PlantRepository.Plants.TryGetValue(id, out var plant))
+                // incase it's been deleted check our repo
+                if (PlantRepository.Plants.TryGetValue(entity.Id, out var plant))
                 {
-
+                    plant.IsWatering = false;
+                    plant.LastWatered = DateTime.UtcNow;
+                    plant.AlertWatering = plant.LastWatered.GetValueOrDefault().AddHours(6);
                 }
             }
         }

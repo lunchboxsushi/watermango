@@ -12,18 +12,20 @@
     <div v-else>
       <v-layout row wrap>
         <div md3 lg3 v-for="plant in plants" :key="plant.Id">
-          <Plant :entity="plant"/>
+          <Plant :entity="plant" :watering="watering"/>
         </div>
       </v-layout>
+      <v-btn v-if="watering" @click="stopWatering">Stop Watering</v-btn>
+      <v-btn v-else @click="startWatering">Start Watering</v-btn>
     </div>
-    <v-btn v-if="watering" @click="stopWatering">Stop Watering</v-btn>
-    <v-btn v-else @click="startWatering">Start Watering</v-btn>
   </v-container>
 </template>
 
 <script>
 import PlantApi from "@/api/PlantApi";
 import Plant from "@/components/Plant";
+import { setTimeout, clearTimeout } from "timers";
+import { error } from "util";
 
 export default {
   components: { Plant },
@@ -31,39 +33,62 @@ export default {
     return {
       plants: [],
       selectedPlants: [],
+      wateringTimeout: null,
       loading: true,
       watering: false
     };
   },
   methods: {
     startWatering() {
-      // set all selected plants to watering status
-      this.selectedPlants = this.plants.filter(p => p.isSelected);
-
-      this.plants.forEach(p => {
-        if (this.selectedPlants.find(s => s.Id === p.Id)) {
-          p.isWatering = true;
-        }
-      });
+      // let components know watering in progress
       this.watering = true;
-      // await PlantApi.startWatering(selectedPlants);
+      try {
+        this.selectedPlants = this.plants.filter(p => p.isSelected);
+        this.plants.forEach(p => {
+          if (this.selectedPlants.find(s => s.Id === p.Id)) {
+            p.IsWatering = true;
+          }
+        });
+
+        PlantApi.startWatering(this.selectedPlants);
+      } catch (exception) {
+        this.plants.forEach(p => {
+          p.IsWatering = false;
+        });
+        this.watering = false;
+        throw error(exception);
+      }
+      // call stop watering after certain time unless it's manually triggered ?
+      this.wateringTimeout = this.handleWaterTimeout();
     },
     stopWatering() {
-      this.plants.forEach(p => (p.isWatering = false));
+      // stop timeout from being called since manual intervention
+      clearTimeout(this.wateringTimeout);
+
+      this.plants.forEach(p => (p.IsWatering = false));
       this.watering = false;
+
+      PlantApi.stopWatering(this.selectedPlants);
+      this.plants = this.fetchPlants();
+    },
+    handleWaterTimeout() {
+      return setTimeout(this.stopWatering, 10 * 1000);
+    },
+    async fetchPlants() {
+      try {
+        // Fetch all plants on page load
+        var results = await PlantApi.getPlants();
+        if (results) {
+          results.forEach(r => (r.isSelected = false));
+        }
+        this.$set(this, "plants", results);
+      } finally {
+        this.loading = false;
+      }
     }
   },
   async mounted() {
-    try {
-      // Fetch all plants on page load
-      var results = await PlantApi.getPlants();
-      if (results) {
-        results.forEach(r => (r.isSelected = false));
-      }
-      this.$set(this, "plants", results);
-    } finally {
-      this.loading = false;
-    }
+    await this.fetchPlants();
   }
 };
 </script>

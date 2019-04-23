@@ -12,23 +12,26 @@ namespace Wm.Web.Controllers
         private readonly PlantService plantService = new PlantService();
 
         [HttpGet]
+        [ActionName(nameof(GetPlants))]
         public IList<Plant> GetPlants()
         {
             return plantService.GetPlants();
         }
 
         [HttpPost]
-        public void StartWatering(IList<Guid> ids)
+        [ActionName(nameof(StartWatering))]
+        public void StartWatering([FromBody] IList<Plant> plants)
         {
             // start watering plants;
-            plantService.StartWatering(ids);
+            plantService.StartWatering(plants);
         }
 
         [HttpPost]
-        public void StopWatering(IList<Guid> ids)
+        [ActionName(nameof(StopWatering))]
+        public void StopWatering([FromBody] IList<Plant> plants)
         {
             // start watering plants;
-            plantService.StopWatering(ids);
+            plantService.StopWatering(plants);
         }
     }
 }

@@ -11,6 +11,8 @@ namespace Wm.Web.Models
 
         public DateTime? LastWatered { get; set; }
 
+        public DateTime? AlertWatering { get; set; }
+
         public bool IsWatering { get; set; }
 
         // TODO: figure out what 'water status' means?
